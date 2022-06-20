@@ -42,7 +42,123 @@ async def start(_, message: Message):
 
 @Client.on_message(command(["bilgi", f"bilgi@{BOT_USERNAME}"]))
 async def bilgi(_, message: Message):
-      await message.reply_text(" ❗ Not:\n Botun aktif çalışması için şu üç yetkiye ihtiyaç vardır:\n- Mesaj silme yetkisi,\n- Bağlantı ile davet etme yetkisi,\n- Sesli sohbeti yönetme yetkisi.", 
+       mesaj bekliyoruz . answer_text ( " ❗ Not:\n Botun aktivite için şu yetkiye ihtiyacı vardır:\n- Mesaj çalışması ile yetkisi,\n- Bağlantı yetkisine yetkisi,\n- Sesli Sohbeti yönetme yetkisi." ,reply_markup=InlineKeyboardMarkup(
+
+             [
+
+                 [
+
+                     InlineKeyboardButton(
+
+                         "Sahib 🇦🇿", url="https://t.me/nihat_33")
+
+                 ],
+
+                 [
+
+                     InlineKeyboardButton(
+
+                         "️🔄 Geri", callback_data="cbbilgi")
+
+                 ] 
+
+             ]
+
+         )
+
+         )
+
+@Client.on_callback_query(filters.regex("admin"))
+
+async def admin(_, query: CallbackQuery):
+
+    await query.edit_message_text(f"""<b>Salam {query.from_user.mention}!\nBu botun adminlər üçün əmr menyusu 🤩\n\n ▶️ /resume - Musiqi oxutmağa davam et\n ⏸️ /durdur - Oxuyan musiqini dayandır\n 🔄 /atla - Sıraya alınmış musiqiyə keç\n ⏹ /skip - Musiqi oxumanı dayandır\n 🔼 /promote - Botun sadəcə yönətici üçün olan əmrlərini istifadə üçün istifadəçiyə yetki ver\n 🔽 /demote - Botun yönətici əmrlərini istifadə edən istifadəçinin yetkisini al\n\n ⚪ /asistan - Musiqi asistanı qrupunuza qoşulur.\n\n</b>""",
+
+    reply_markup=InlineKeyboardMarkup(
+
+             [
+
+                 [
+
+                     InlineKeyboardButton(
+
+                         "Sahib 🇦🇿", url="https://t.me/nihat_33")
+
+                 ],
+
+                 [
+
+                     InlineKeyboardButton(
+
+                         "️🔄 Geri", callback_data="cbbilgi")
+
+                 ] 
+
+             ]
+
+         )
+
+         )
+
+@Client.on_callback_query(filters.regex("cbstart"))
+
+async def cbstart(_, query: CallbackQuery):
+
+    await query.edit_message_text(f"""Salam {query.from_user.mention} 🎵\nMən {bot}!\nSəsli sohbətlərdə musiqi oxuyan botam. Ban yetkisiz, Səs yönətim yetki verib, Asistanı qrupa əlavə edin.\n\nSahibim👉  [NIHAT](https://t.me/nihat_33)""",
+
+         reply_markup=InlineKeyboardMarkup(
+
+            [
+
+                [
+
+                    InlineKeyboardButton(
+
+                        "➕ ❰ Məni Qrupa Əlavə Et ❱ ➕", url=f"https://t.me/SM_mmusic_bot?startgroup=true"
+
+                    )
+
+                ],
+
+                [
+
+                    InlineKeyboardButton(
+
+                        "🔊 Asistan", url="https://t.me/SM_music2_bot"
+
+                    ),
+
+                    InlineKeyboardButton(
+
+                        "Support 💬", url="https://t.me/Ay_isigi_sohbet"
+
+                    )
+
+                ],
+
+                [
+
+                    InlineKeyboardButton(
+
+                        "🧩 Əmrlər" , callback_data= "cbbilgi"
+
+                    ),
+
+                    InlineKeyboardButton(
+
+                        "Rəsmi Kanal 🇦🇿", url=f"https://t.me/Fake_love_33"
+
+                    )
+
+                ]
+
+                
+
+           ]
+
+        ),
+
+    )
       reply_markup=InlineKeyboardMarkup(
              [
                  [
